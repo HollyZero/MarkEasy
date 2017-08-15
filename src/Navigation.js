@@ -27,7 +27,7 @@ class Navigation extends Component {
                                 <span className="caret"></span></a>
                             <ul className="dropdown-menu">
                                 <li><a href="#">Import Rubric</a></li>
-                                <li><a href="#">Import Student List</a></li>
+                                <li><Link to="/importstlst">Import Student List</Link></li>
                             </ul>
                         </li>
                         <li className="dropdown">
