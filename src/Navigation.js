@@ -36,7 +36,7 @@ class Navigation extends Component {
                             <ul className="dropdown-menu">
                                 <li><a href="#">Export Rubric</a></li>
                                 <li><a href="#">Export Student List</a></li>
-                                <li><a href="#">Export Feedback</a></li>
+                                <li><Link to="/exportfeedback">Export Feedback</Link></li>
                             </ul>
                         </li>
                     </ul>
