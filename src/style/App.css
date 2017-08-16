@@ -23,7 +23,17 @@
 }
 
 .Hide {
-  visibility: hidden;
+  display:none;
+}
+
+canvas{
+  border: solid black 1px;
+}
+
+.center {
+    margin: auto;
+    width: 70%;
+    padding: 10px;
 }
 
 @keyframes App-logo-spin {

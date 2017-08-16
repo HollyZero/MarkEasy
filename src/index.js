@@ -5,17 +5,23 @@ import App from './App';
 import Mark from './Mark';
 import Edit from './Edit';
 import registerServiceWorker from './registerServiceWorker';
-import {Router, Route} from 'react-router';
-import createHistory from 'history/createHashHistory';
+import {Router, Route, Switch} from 'react-router';
+import history from "./history.js"
 import ImportStLst from "./ImportStLst";
+import CreateFeedBack from "./createFeedBack.js";
+import notFound from "./notFound.js";
 
 ReactDOM.render(
-    <Router history={createHistory()}>
+    <Router history={history}>
         <div>
-            <Route exact path="/" component={App}/>
-            <Route exact path="/importstlst" component={ImportStLst}/>
-            <Route exact path="/mark" component={Mark}/>
-            <Route exact path="/edit" component={Edit}/>
+            <Switch>
+                <Route exact path="/" component={App}/>
+                <Route exact path="/importstlst" component={ImportStLst}/>
+                <Route exact path="/mark" component={Mark}/>
+                <Route exact path="/edit" component={Edit}/>
+                <Route exact path="/create_feedback" render={(props)=>(<CreateFeedBack {...props} stage={1}/>)}/>
+                <Route path="*" component={notFound} />
+            </Switch>
         </div>
     </Router>,
     document.getElementById('root')

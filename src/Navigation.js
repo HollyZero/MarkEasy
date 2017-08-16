@@ -11,13 +11,13 @@ class Navigation extends Component {
             <nav className="navbar navbar-inverse">
                 <div className="container-fluid">
                     <ul className="nav navbar-nav">
-                        <li className="active"><a href="#">Home</a></li>
+                        <li className="active"><Link to="/">Home</Link></li>
                         <li className="dropdown">
-                            <a className="dropdown-toggle" data-toggle="dropdown" href="#">Create
+                            <a className="dropdown-toggle" data-toggle="dropdown">Create
                                 <span className="caret"></span></a>
                             <ul className="dropdown-menu">
                                 <li><a href="#">Create Rubric</a></li>
-                                <li><a href="#">Create Feedback</a></li>
+                                <li><Link to="./create_feedback"> Create Feedback</Link></li>
                             </ul>
                         </li>
                         <li><Link to="/mark">Mark</Link></li>
