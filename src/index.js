@@ -10,6 +10,7 @@ import history from "./history.js"
 import ImportStLst from "./ImportStLst";
 import CreateFeedBack from "./createFeedBack.js";
 import notFound from "./notFound.js";
+import ExportFeedback from "./ExportFeedback";
 
 ReactDOM.render(
     <Router history={history}>
@@ -17,6 +18,7 @@ ReactDOM.render(
             <Switch>
                 <Route exact path="/" component={App}/>
                 <Route exact path="/importstlst" component={ImportStLst}/>
+                <Route exact path="/exportfeedback" component={ExportFeedback}/>
                 <Route exact path="/mark" component={Mark}/>
                 <Route exact path="/edit" component={Edit}/>
                 <Route exact path="/create_feedback" render={(props)=>(<CreateFeedBack {...props} stage={1}/>)}/>
