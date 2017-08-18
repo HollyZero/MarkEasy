@@ -16,7 +16,7 @@ class Navigation extends Component {
                             <a className="dropdown-toggle" data-toggle="dropdown" href="#">Create
                                 <span className="caret"></span></a>
                             <ul className="dropdown-menu">
-                                <li><a href="#">Create Rubric</a></li>
+                                <li><Link to="/CreateRubric">Create Rubric</Link></li>
                                 <li><a href="#">Create Feedback</a></li>
                             </ul>
                         </li>

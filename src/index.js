@@ -4,6 +4,7 @@ import './style/index.css';
 import App from './App';
 import Mark from './Mark';
 import Edit from './Edit';
+import CreateRubric from './CreateRubric';
 import registerServiceWorker from './registerServiceWorker';
 import {Router, Route} from 'react-router';
 import createHistory from 'history/createHashHistory';
@@ -14,6 +15,7 @@ ReactDOM.render(
             <Route exact path="/" component={App}/>
             <Route exact path="/mark" component={Mark}/>
             <Route exact path="/edit" component={Edit}/>
+            <Route exact path="/CreateRubric" component={CreateRubric}/>
         </div>
     </Router>,
     document.getElementById('root')
