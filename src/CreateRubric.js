@@ -4,7 +4,7 @@
 import React, { Component } from 'react';
 import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
 import EditCellClassNameTable from './EditCellClassNameTable';
-
+import Navigation from './Navigation.js';
 var ReactDOM = require('react-dom');
 var ReactBsTable  = require('react-bootstrap-table');
 // var BootstrapTable = ReactBsTable.BootstrapTable;
@@ -14,8 +14,9 @@ var ReactBsTable  = require('react-bootstrap-table');
 class CreateRubric extends Component {
 
     render(){
-        return (
+        return (            
             <div className="container">
+            <Navigation />
             <h1>Input Group Button</h1>
             <form action="/action_page.php">
             <div className="input-group">
