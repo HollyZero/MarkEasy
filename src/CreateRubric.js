@@ -2,6 +2,14 @@
  * Created by Nyanko on 8/9/2017.
  */
 import React, { Component } from 'react';
+import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import EditCellClassNameTable from './EditCellClassNameTable';
+
+var ReactDOM = require('react-dom');
+var ReactBsTable  = require('react-bootstrap-table');
+// var BootstrapTable = ReactBsTable.BootstrapTable;
+// var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
+
 
 class CreateRubric extends Component {
 
@@ -16,9 +24,22 @@ class CreateRubric extends Component {
                 <button className="btn btn-default" type="submit"><i className="glyphicon glyphicon-pencil" /></button>
                 </div>
             </div>
-        </form></div>
+            <EditCellClassNameTable/>
+        </form></div>        
         );
     }
 }
 
+// var RubricTable = React.createClass({
+//   render: function() {
+//     return (
+//         <BootstrapTable data={products} striped hover>
+//             <TableHeaderColumn isKey dataField='id'>Question ID</TableHeaderColumn>
+//             <TableHeaderColumn dataField='name'>Question Description</TableHeaderColumn>
+//             <TableHeaderColumn dataField='price'>Total Marks</TableHeaderColumn>
+//         </BootstrapTable>
+//         // document.getElementById('basic')
+//     );
+//   }
+// });
 export default CreateRubric;
