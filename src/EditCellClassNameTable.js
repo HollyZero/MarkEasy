@@ -87,14 +87,35 @@ export default class EditCellClassNameTable  extends Component {
     }
     //...
 
+    handleDeleteButtonClick = (onClick) => {
+      // Custom your onClick event here,
+      // it's not necessary to implement this function if you have no any process before onClick
+      console.log('This is my custom function for DeleteButton click event');
+      onClick();
+    }
+    createCustomDeleteButton = (onClick) => {
+      return (
+        <DeleteButton
+          btnText='Delete'
+          btnContextual='btn-warning'
+          className='my-custom-class'
+          btnGlyphicon='glyphicon-edit'
+          onClick={ () => this.handleDeleteButtonClick(onClick) }/>
+      );
+    }
+    //...
 
     render() {
         const options = {
-          insertBtn: this.createCustomInsertButton
+          insertBtn: this.createCustomInsertButton,
+          deleteBtn: this.createCustomDeleteButton
+        };
+        const selectRow = {
+          mode: 'checkbox'
         };
         //..
         return (
-        <BootstrapTable data={ jobs } cellEdit={ cellEditProp } options={ options } insertRow>
+        <BootstrapTable data={ jobs } selectRow={ selectRow } cellEdit={ cellEditProp } options={ options } insertRow deleteRow> 
             <TableHeaderColumn dataField='id' isKey={ true }>Question Number</TableHeaderColumn>
             <TableHeaderColumn dataField='status' editable={ { validator: jobStatusValidator } } editColumnClassName={ this.editingJobStatus } invalidEditColumnClassName={ this.invalidJobStatus }>Total Mark</TableHeaderColumn>
             <TableHeaderColumn dataField='name' editable={ { type: 'textarea', validator: jobNameValidator } } editColumnClassName='editing-jobsname-class' invalidEditColumnClassName='invalid-jobsname-class'>Question Description</TableHeaderColumn>
