@@ -2,10 +2,12 @@
  * Created by Nyanko on 8/9/2017.
  */
 import React, { Component } from 'react';
-import {BootstrapTable, TableHeaderColumn, InsertButton} from 'react-bootstrap-table';
+import {BootstrapTable, TableHeaderColumn, InsertButton, DeleteButton} from 'react-bootstrap-table';
+import styles from './EditCellClassNameTable.scss';
 // with es5
 var ReactDOM = require('react-dom');
 var ReactBsTable  = require('react-bootstrap-table');
+
 // var BootstrapTable = ReactBsTable.BootstrapTable;
 // var TableHeaderColumn = ReactBsTable.TableHeaderColumn;
 
@@ -45,7 +47,7 @@ function jobNameValidator(value) {
 function jobStatusValidator(value) {
   const nan = isNaN(parseInt(value, 10));
   if (nan) {
-    return 'Job Status must be a integer!';
+    return 'Total Mark must be a integer!';
   }
   return true;
 }
@@ -93,10 +95,10 @@ export default class EditCellClassNameTable  extends Component {
         //..
         return (
         <BootstrapTable data={ jobs } cellEdit={ cellEditProp } options={ options } insertRow>
-            <TableHeaderColumn dataField='id' isKey={ true }>Job ID</TableHeaderColumn>
-            <TableHeaderColumn dataField='status' editable={ { validator: jobStatusValidator } } editColumnClassName={ this.editingJobStatus } invalidEditColumnClassName={ this.invalidJobStatus }>Job Status</TableHeaderColumn>
-            <TableHeaderColumn dataField='name' editable={ { type: 'textarea', validator: jobNameValidator } } editColumnClassName='editing-jobsname-class' invalidEditColumnClassName='invalid-jobsname-class'>Job Name</TableHeaderColumn>
-            <TableHeaderColumn dataField='type' editable={ { type: 'select', options: { values: jobTypes } } }>Job Type</TableHeaderColumn>
+            <TableHeaderColumn dataField='id' isKey={ true }>Question Number</TableHeaderColumn>
+            <TableHeaderColumn dataField='status' editable={ { validator: jobStatusValidator } } editColumnClassName={ this.editingJobStatus } invalidEditColumnClassName={ this.invalidJobStatus }>Total Mark</TableHeaderColumn>
+            <TableHeaderColumn dataField='name' editable={ { type: 'textarea', validator: jobNameValidator } } editColumnClassName='editing-jobsname-class' invalidEditColumnClassName='invalid-jobsname-class'>Question Description</TableHeaderColumn>
+            <TableHeaderColumn dataField='type' editable={ { type: 'select', options: { values: jobTypes } } }>Question Type</TableHeaderColumn>
             <TableHeaderColumn dataField='active' editable={ { type: 'checkbox', options: { values: 'Y:N' } } }>Active</TableHeaderColumn>
         </BootstrapTable>
         );
